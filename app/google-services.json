@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "22754237337",
-    "firebase_url": "https://chat-6b034-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "chat-6b034",
-    "storage_bucket": "chat-6b034.appspot.com"
+    "project_number": "152101462175",
+    "firebase_url": "https://chat-eb392-default-rtdb.firebaseio.com",
+    "project_id": "chat-eb392",
+    "storage_bucket": "chat-eb392.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:22754237337:android:b1e769b596a24e55991108",
+        "mobilesdk_app_id": "1:152101462175:android:c8a90ee5f4c10b414e82aa",
         "android_client_info": {
           "package_name": "com.example.firebase_chat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "22754237337-acebti17d7e2q18q2i4a29h4fh8q77ro.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.firebase_chat",
-            "certificate_hash": "a799303b659bff9088f2f23f0b544f75a52778e8"
-          }
-        },
-        {
-          "client_id": "22754237337-hgohqj1r01adq7efrt9a6g343rh4u2gu.apps.googleusercontent.com",
+          "client_id": "152101462175-5e1f3haobavgmhmb2lj2bo5j2t5aeelm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDojjISPBeDxIAvWL38--8_jGhBbM7mby8"
+          "current_key": "AIzaSyBf1Cf5hb0dk05QCjqJW_wQOGF-JUp2CNE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "22754237337-hgohqj1r01adq7efrt9a6g343rh4u2gu.apps.googleusercontent.com",
+              "client_id": "152101462175-5e1f3haobavgmhmb2lj2bo5j2t5aeelm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
