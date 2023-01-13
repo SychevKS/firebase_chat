@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -33,12 +35,17 @@ public class SignInActivity extends AppCompatActivity {
 
     private boolean isLoginModeActive;
 
+    FirebaseDatabase database;
+    DatabaseReference usersDatabaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
         auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        usersDatabaseReference = database.getReference("users");
 
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
@@ -109,6 +116,9 @@ public class SignInActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "createUserWithEmail:success");
                                     FirebaseUser user = auth.getCurrentUser();
+
+                                    createUser(user);
+
                                     startActivity(new Intent(SignInActivity.this, MainActivity.class));
                                     // updateUI(user);
                                 } else {
@@ -122,6 +132,15 @@ public class SignInActivity extends AppCompatActivity {
                         });
             }
         }
+    }
+
+    private void createUser(FirebaseUser firebaseUser) {
+        User user = new User();
+        user.setEmail(firebaseUser.getEmail());
+        user.setId(firebaseUser.getUid());
+        user.setName(userNameEditText.getText().toString().trim());
+
+        usersDatabaseReference.push().setValue(user);
     }
 
     public void toogleLoginMode(View view) {
