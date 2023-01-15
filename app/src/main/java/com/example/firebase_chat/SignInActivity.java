@@ -63,7 +63,7 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         if(auth.getCurrentUser() != null){
-            startActivity(new Intent(SignInActivity.this,MainActivity.class));
+            startActivity(new Intent(SignInActivity.this, UserListActivity.class));
         }
     }
 
@@ -84,7 +84,7 @@ public class SignInActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = auth.getCurrentUser();
-                                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                                    Intent intent = new Intent(SignInActivity.this, UserListActivity.class);
                                     intent.putExtra("userName", userNameEditText.getText().toString().trim());
                                     startActivity(intent);
                                     // updateUI(user);
@@ -122,7 +122,7 @@ public class SignInActivity extends AppCompatActivity {
                                     createUser(user);
 
                                     // updateUI(user);
-                                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                                    Intent intent = new Intent(SignInActivity.this, UserListActivity.class);
                                     intent.putExtra("userName", userNameEditText.getText().toString().trim());
                                     startActivity(intent);
 
